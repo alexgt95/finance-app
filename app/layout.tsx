@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 
-import "./globals.css";
-import { Toaster } from "@components/ui/toaster";
+//import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 import { QueryProvider } from "@/providers/query-provider";
 import { SheetProvider } from "@/providers/sheet-provider";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <QueryProvider>
             <SheetProvider />
-              {children}
+            {children}
           </QueryProvider>
         </body>
       </html>

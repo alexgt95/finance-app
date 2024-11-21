@@ -22,15 +22,9 @@ type FormValues = z.input<typeof formSchema>;
 export const NewAccountSheet = () => {
   const { isOpen, onClose } = useNewAccount();
 
-  //const mutation = useCreateAccount();
-
-//   const onSubmit = (values: FormValues) => {
-//     mutation.mutate(values, {
-//       onSuccess: () => {
-//         onClose();
-//       },
-//     });
-//   };
+  const onSubmit = (values: FormValues) => {
+    console.log({ values});
+  }
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
@@ -45,7 +39,7 @@ export const NewAccountSheet = () => {
         </SheetHeader>
         <AccountForm
           onSubmit={onSubmit}
-          //disabled={mutation.isPending}
+          disabled={false}
           defaultValues={{
             name: "",
           }}
