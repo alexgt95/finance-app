@@ -1,15 +1,29 @@
-"use client";
-
-import { useNewAccount } from "@/features/accounts/hooks/use-new-account";
-
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Plus } from "lucide-react";
 
-export default function Home() {
-  const { onOpen } = useNewAccount();
+const AccountsPage = () => {
 
   return (
-    <Button onClick={onOpen}>
-      Add an account
-    </Button>
+      <div>
+          <Card className="border-none drop-shadow-sm">
+              <CardHeader className="gap-y-2 lg:flex-row lg:items-center lg:justify-between">
+                <CardTitle className="text-xl line-clamp-1">
+                  Accounts page
+                </CardTitle>
+                <Button size="sm">
+                  <Plus className="size-4 mr-2" />
+                  Add new
+                </Button>
+              </CardHeader>
+          </Card>
+      </div>
   );
-}
+};
+
+export default AccountsPage;
